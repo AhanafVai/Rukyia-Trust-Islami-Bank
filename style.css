@@ -1,0 +1,44 @@
+h1 { 
+    padding: 2em;
+}
+.submmit-area{
+    width: 50em;
+    height: 15em;
+    margin: 2em auto;
+    box-shadow: 10px 10px 30px 5px gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+.tut{
+    margin-top: 1em;
+}
+#tran {
+display:none;
+margin-top: 10em;
+}
+.stat {
+    margin: 0 5em;
+    padding: 1em;
+    border-radius: 10px;
+    color: white;
+}
+.Deposite{
+    background-color: lightgreen;
+}
+.Withdraw{
+    background-color: rosybrown;
+}
+.Balance{
+    background-color: sandybrown;
+}
+.do{
+    width: 30em;
+    height: 12em;
+    margin: 4em 5em;
+    box-shadow: 10px 10px 30px 5px gray;
+    border-radius: 10px;
+    padding: 20px;
+}
+.but{
+    margin-top: 1em;
+}

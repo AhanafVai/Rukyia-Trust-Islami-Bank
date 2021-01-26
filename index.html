@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTIB</title>
+    <link rel="stylesheet" href="./style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <section id="login-area">
+        <h1 class="text-center">Welcome to Rukyia Trust Islami Bank</h1>
+        <div class="submmit-area">
+           <h3>login</h3>
+           <input type="text" placeholder="User Name" class="form-control tut">
+           <br>
+           <input type="password" placeholder="password" class="form-control">
+           <br>
+           <button id="btnLogin" type="button" class="btn btn-primary">Login</button>
+       </div>
+    </section>
+    <section id="tran">
+    <div class=" row ">
+      <div class="col-md-4">
+          <div class="stat Deposite">
+              <h5>Deposite</h5>
+              <h2>$<span id="currentdepo">00</span></h2>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="stat Withdraw">
+              <h5>Withdraw</h5>
+              <h2>$ <span id="currentwith">00</span></h2>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="stat Balance">
+              <h5>Balance</h5>
+              <h2>$ <span id="currentbalance">1000</span></h2>
+          </div>
+      </div>
+      <div class="row ">
+          <div class= "col-md-6">
+              <div class="do">
+                  <h3>Deposite</h3>
+                  <input id="depoAmount" class="form-control" type="text" placeholder="Amount">
+                  <br>
+                  <button id="adddepo" class="btn btn-primary but ">Enter</button>
+              </div>
+          </div class= "col-md-6">
+          <div class= "col-md-6">
+              <div class="do">
+                  <h3>Withdraw</h3>
+                  <input id="withdrawAmount" class="form-control" type="text" placeholder="Amount">
+                  <br>
+                  <button id="addwithdraw" class="btn btn-primary but">Enter</button>
+            </div>
+            </div class= "col-md-6">
+      </div>
+    </div>
+</section>
+    <script>
+        var btn = document.getElementById("btnLogin").addEventListener("click",function(){
+    var loginPage = document.getElementById("login-area");
+    loginPage.style.display="none";
+    const newPage = document.getElementById("tran");
+    newPage.style.display ="block";
+})
+
+ const depoBut = document.getElementById("adddepo").addEventListener("click", function() {
+ const depoAmount = document.getElementById("depoAmount").value;
+ const depoNum = parseFloat(depoAmount);
+ document.getElementById("depoAmount").value ="";
+updateid("currentdepo",depoNum);
+ updateid("currentbalance",depoNum);
+
+})
+const withBut = document.getElementById("addwithdraw").addEventListener("click", function() {
+ const withAmount = document.getElementById("withdrawAmount").value;
+ const withNum = parseFloat(withAmount);
+ document.getElementById("withdrawAmount").value ="";
+ updatewithid("currentwith",withNum);
+ updatewithid("currentbalance",withNum);
+})
+
+function updatewithid(id,withNum){
+    const current = document.getElementById(id).innerText;
+ const currentNum = parseFloat(current);
+ const total = currentNum - withNum;
+ document.getElementById(id).innerText = total;
+}
+
+function updateid(id,depoNum){
+    const current = document.getElementById(id).innerText;
+ const currentNum = parseFloat(current);
+ const total = depoNum + currentNum;
+ document.getElementById(id).innerText = total;
+}
+
+    </script>
+</body>
+</html>
